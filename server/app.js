@@ -17,16 +17,6 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(parseCookies);
 app.use(Auth.createSession);
 
-// var verifySession = (req, res, func) => {
-//   if (Auth.updateSession(req.session)) {
-//     func();
-//   } else {
-//     var hash = req.session.hash;
-//     console.log(hash);
-//     models.Sessions.delete({hash: hash});
-//     res.redirect('/login');
-//   }
-// };
 
 app.get('/',
   (req, res) => {
